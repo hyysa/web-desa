@@ -32,29 +32,21 @@
       filter: grayscale(25%);
     }
 
-    .overlapping-content {
+    .masterhead{
+      background-size: cover;
+      min-height: 100%;
+      position: relative;
+      color: white;
+    }
+
+    .color-overlay{
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap:20px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .4);
     }
 
-    .overlapping-content img {
-      max-width: 20%; /* Adjust the width as needed */
-      max-height: 20%; /* Adjust the height as needed */
-      display: block;
 
-    }
-
-    .overlapping-content h2 {
-      /* margin-top: 10px; */
-    }
     
 
   </style>
@@ -70,14 +62,12 @@
 
     <!-- Add a container to control the padding -->
     <div class="container-fluid overlapping-image p-0">
-      <div class="overlapping-content">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Lambang_Kabupaten_Blitar.webp/905px-Lambang_Kabupaten_Blitar.webp.png" class="" alt="Logo">
-        <div class="wrap">
-          <h2>DESA PANDANARUM</h2>
-          <h4>KABUPATEN BLITAR</h4>
+      <div class="masterhead d-flex justify-content-center align-items-center pt-5" style="background-image:url('https://www.desawisataterong.com/images/image/Sales%20Mission_2022/desa-wisata-kreatif-terong-belitung-11.jpg');">
+        <div class="color-overlay d-flex flex-column justify-content-center align-items-center gap-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Lambang_Kabupaten_Blitar.webp/905px-Lambang_Kabupaten_Blitar.webp.png" alt="" width="120vh" height="120vh">
+          <h1>Kantor Desa Pandanarum</h1>
         </div>
       </div>
-      <img src="https://www.desawisataterong.com/images/image/Sales%20Mission_2022/desa-wisata-kreatif-terong-belitung-11.jpg" class="img-fluid" alt="...">
     </div>
 
     <nav class="navbar navbar-expand-lg bg-blue-900 text-white">
