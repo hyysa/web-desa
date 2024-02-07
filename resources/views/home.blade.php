@@ -1,121 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Desa Pandanarum</title>
-  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <style>
-    body{
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    /* Ensure navbar items display inline within the navbar */
-    .navbar-text {
-      display: inline-block;
-    }
-
-    /* Define the blue 900 background color */
-    .bg-blue-900 {
-      background-color: #07244f;
-    }
-
-    .overlapping-image {
-      position: relative;
-      height: 450px; /* Adjust the height as needed */
-      overflow: hidden;
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(25%);
-    }
-
-    .masterhead{
-      background-size: cover;
-      min-height: 100%;
-      position: relative;
-      color: white;
-    }
-
-    .color-overlay{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, .4);
-    }
-
-
-    
-
-  </style>
-</head>
-<body>
-  <div class="main-container">
-    <nav class="navbar fixed-top bg-blue-900">
-      <div class="container-fluid">
-        <span id="dateTime" class="navbar-text text-white"></span>
-        <button type="button" class="btn btn-outline-light" id="realTime"></button>
-      </div>
-    </nav>
-
-    <!-- Add a container to control the padding -->
-    <div class="container-fluid overlapping-image p-0">
-      <div class="masterhead d-flex justify-content-center align-items-center pt-5" style="background-image:url('https://www.desawisataterong.com/images/image/Sales%20Mission_2022/desa-wisata-kreatif-terong-belitung-11.jpg');">
-        <div class="color-overlay d-flex flex-column justify-content-center align-items-center gap-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Lambang_Kabupaten_Blitar.webp/905px-Lambang_Kabupaten_Blitar.webp.png" alt="" width="120vh" height="120vh">
-          <h1>Kantor Desa Pandanarum</h1>
+@extends('frontend.header')
+@section('title', 'Home | Desa Pandanarum')
+@section('content')
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="carouselExampleCaptions" class="carousel slide carousel-sm" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-      </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg bg-blue-900 text-white">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white active" href="/"><i class="fas fa-home"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://dpmpd.landakkab.go.id/asset/foto_desa/foto-desa.jpg" class="d-block w-100" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/jawapos/2020/10/desa-bisa-kaya-dari-wisata.jpg" class="d-block w-100" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://kuansingterkini.com/application/views/web/berita/73161759470-hipwee.jpg" class="d-block w-100" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Sejarah</a></li>
-                <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
-                <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
-                <li><a class="dropdown-item" href="#">Peta</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Sejarah</a></li>
-                <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
-                <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
-                <li><a class="dropdown-item" href="#">Peta</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" aria-current="page" href="#">Kontak</a>
-            </li>
-          </ul>
-        </div>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </nav>
-  </div>
-
-  <footer class="bg-blue-900 text-white text-center py-3 fixed-bottom">
-    <div class="container">
-      <p>&copy; 2024 Desa Pandanarum. All rights reserved.</p>
     </div>
-  </footer>
+    <div class="col-sm-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small>And some small print.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-body-secondary">3 days ago</small>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small class="text-body-secondary">And some muted small print.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-body-secondary">3 days ago</small>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small class="text-body-secondary">And some muted small print.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-body-secondary">3 days ago</small>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small class="text-body-secondary">And some muted small print.</small>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">col-sm</div>
+    <div class="col-sm">col-sm</div>
+    <div class="col-sm">col-sm</div>
+  </div>
+</div>
+
   
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('js/time.js') }}"></script>
-</body>
-</html>
+
+
+@endSection
